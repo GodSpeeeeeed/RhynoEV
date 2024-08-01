@@ -1,0 +1,248 @@
+/* General reset and base styling */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
+/* About section styling */
+.about {
+    width: 100%;
+    padding: 78px 0;
+    background-color: #424242;
+    position: relative;
+    overflow: hidden;
+}
+
+.about img {
+    height: auto;
+    width: 420px;
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Main container styling */
+.main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* About text styling with animation */
+.about-text {
+    width: 550px;
+    animation: fadeInDown 1s ease-out;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-text:hover {
+    transform: translateY(-5px);
+    color: #F9ED32;
+}
+
+.about-text h1,
+.about-text h5 {
+    animation: fadeInDown 1s ease-out;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-text h1:hover,
+.about-text h5:hover {
+    transform: translateY(-5px);
+    color: #F9ED32;
+}
+
+.about-text h1 {
+    color: white;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.about-text h5 {
+    color: white;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+span {
+    color: #F9ED32;
+}
+
+.about-text p {
+    color: #F2F2F2;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+    animation: fadeInUp 1.5s ease-out, slideInFromRight 1s ease-out;
+}
+
+/* Button styling */
+.button {
+    background: #F9ED32;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: background 0.4s, border 0.4s, transform 0.4s;
+}
+
+.button:hover {
+    background: transparent;
+    border: 2px solid #F9ED32;
+    cursor: pointer;
+    animation: buttonHover 0.4s ease-in-out;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 1em;
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.navbar .logo {
+    height: 60px;
+    animation: logoBounce 1s ease-out;
+}
+
+.nav-center ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+}
+
+.nav-center ul li {
+    display: inline;
+}
+
+.nav-center ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.nav-center ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #F9ED32;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.nav-center ul li a:hover::after {
+    transform: translateX(0);
+}
+
+.nav-center ul li a:hover {
+    background-color: #666;
+    border-radius: 5px;
+    transform: scale(1.1);
+    color: #F9ED32;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes logoBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
